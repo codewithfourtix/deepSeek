@@ -1,0 +1,1164 @@
+/* StartupIdeaGenerator.css */
+
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f39c12;
+  --background-color: #f0f4f8;
+  --card-background: #ffffff;
+  --text-color: #333333;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.startup-idea-generator-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.button:hover {
+  background-color: #3a7bc8;
+}
+
+.button:disabled {
+  background-color: #a0c3e8;
+  cursor: not-allowed;
+}
+
+.ideas-container {
+  margin-top: 2rem;
+}
+
+.ideas-title {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.idea-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.idea-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.idea-card-content {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .startup-idea-generator-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.9rem;
+  }
+
+  .ideas-title {
+    font-size: 1.5rem;
+  }
+
+  .idea-card-content {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.idea-card {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Accessibility improvements */
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --card-background: #2c2c2c;
+    --text-color: #f0f0f0;
+    --primary-color: #5a9fef;
+    --secondary-color: #f7b731;
+  }
+
+  .input {
+    background-color: #3a3a3a;
+    color: var(--text-color);
+  }
+
+  .button:disabled {
+    background-color: #4a4a4a;
+    color: #8a8a8a;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a7bc8;
+}
+
+/* Print styles */
+@media print {
+  .startup-idea-generator-container {
+    box-shadow: none;
+  }
+
+  .input,
+  .button {
+    display: none;
+  }
+
+  .idea-card {
+    page-break-inside: avoid;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Additional enhancements */
+.startup-idea-generator-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.startup-idea-generator-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-color);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.startup-idea-generator-container::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background-color: var(--secondary-color);
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.input::placeholder {
+  color: #999;
+  transition: var(--transition);
+}
+
+.input:focus::placeholder {
+  opacity: 0.5;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+.ideas-container {
+  position: relative;
+}
+
+.ideas-container::before {
+  content: "💡";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+/* Enhance focus styles for better accessibility */
+.input:focus,
+.button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Add a subtle gradient background to idea cards */
+.idea-card {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--card-background),
+    color-mix(in srgb, var(--card-background) 95%, var(--primary-color))
+  );
+}
+
+/* Improve button interaction feedback */
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Add a pulsing animation to the generate button when idle */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(74, 144, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+  }
+}
+
+.button:not(:disabled):not(:active) {
+  animation: pulse 2s infinite;
+}
+
+/* Style for screen readers only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Add some flair to the title */
+.title {
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.title:hover::after {
+  transform: scaleX(1);
+}
+
+/* Enhance the loading state */
+.button:disabled {
+  position: relative;
+  overflow: hidden;
+}
+
+.button:disabled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Add a subtle texture to the background */
+body {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Improve color contrast for better accessibility */
+.button,
+.ideas-title {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle transition to idea cards on hover */
+.idea-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.idea-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Enhance the input field */
+.input {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.input:hover {
+  border-color: var(--secondary-color);
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* Add a subtle scale effect to the button on hover */
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* Improve the ideas container */
+.ideas-container {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a staggered animation to idea cards */
+.idea-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.idea-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.idea-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.idea-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Add a subtle hover effect to the title */
+.title {
+  transition: text-shadow 0.3s ease;
+}
+
+.title:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve button accessibility */
+.button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Add a subtle animation to the background shapes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.startup-idea-generator-container::before,
+.startup-idea-generator-container::after {
+  animation: float 6s ease-in-out infinite;
+}
+
+.startup-idea-generator-container::after {
+  animation-delay: -3s;
+}
+
+/* Enhance the scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-color);
+}
+
+/* Add a focus style for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Improve color contrast in dark mode */
+@media (prefers-color-scheme: dark) {
+  .button {
+    background-color: #2a5a8a;
+  }
+
+  .button:hover {
+    background-color: #3a7bc8;
+  }
+
+  .input {
+    border-color: #5a9fef;
+  }
+}
+
+/* Add a subtle text gradient to the title */
+.title {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Improve the loading animation */
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60% {
+    content: "...";
+  }
+  80%,
+  100% {
+    content: "";
+  }
+}
+
+.button:disabled::after {
+  content: "";
+  animation: dots 1.5s infinite;
+}
+
+/* Add a subtle parallax effect to the background */
+body {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Enhance the idea card design */
+.idea-card {
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.idea-card:hover {
+  border-left-color: var(--secondary-color);
+}
+
+/* Add a subtle glow effect to the input on focus */
+.input:focus {
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+/* Improve the responsive design */
+@media (max-width: 480px) {
+  .startup-idea-generator-container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add a subtle transition to the whole page */
+body {
+  transition: background-color 0.5s ease;
+}
+
+/* Enhance the accessibility of the generate button */
+.button {
+  position: relative;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background-color: var(--primary-color);
+  z-index: -1;
+  border-radius: calc(var(--border-radius) + 2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button:focus-visible::before {
+  opacity: 0.3;
+}
+
+/* Add a subtle animation to the ideas title */
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.ideas-title::after {
+  content: "✨";
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  font-size: 1.2rem;
+  animation: sparkle 2s infinite;
+}
+
+/* Improve the print styles */
+@media print {
+  body {
+    background: none;
+  }
+
+  .startup-idea-generator-container {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .title,
+  .ideas-title {
+    color: black;
+    -webkit-text-fill-color: black;
+  }
+
+  .idea-card {
+    page-break-inside: avoid;
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+}
+
+/* Add a subtle texture to the idea cards */
+.idea-card {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Enhance the focus styles for better visibility */
+.input:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Add a subtle transition to the whole component */
+.startup-idea-generator-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.startup-idea-generator-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve the loading state visibility */
+.button:disabled {
+  position: relative;
+  overflow: hidden;
+}
+
+.button:disabled::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Add a subtle scale effect to idea cards on hover */
+.idea-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.idea-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve the contrast of placeholder text */
+.input::placeholder {
+  color: #999;
+  opacity: 0.7;
+}
+
+/* Add a subtle animation to the generate button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(74, 144, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+  }
+}
+
+.button:not(:disabled):not(:active) {
+  animation: pulse 2s infinite;
+}
+
+/* Enhance the accessibility of the component */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Add a subtle transition to the input field */
+.input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:hover {
+  border-color: var(--secondary-color);
+}
+
+/* Improve the contrast of the button text */
+.button {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle animation to the title */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Enhance the focus styles for keyboard navigation */
+.input:focus-visible,
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+}
+
+/* Improve the contrast of the ideas title */
+.ideas-title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a subtle transition to the whole page when switching color schemes */
+@media (prefers-color-scheme: dark) {
+  body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+}
+
+/* Enhance the scrollbar design */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Improve the button interaction feedback */
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Add a subtle animation to the ideas container */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.ideas-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Enhance the responsive design for larger screens */
+@media (min-width: 1200px) {
+  .startup-idea-generator-container {
+    max-width: 1000px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .input,
+  .button {
+    font-size: 1.1rem;
+  }
+
+  .idea-card-content {
+    font-size: 1.2rem;
+  }
+}
+
+/* Add a subtle transition to the idea cards */
+.idea-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Improve the accessibility of the component */
+.startup-idea-generator-container {
+  outline: none;
+}
+
+.startup-idea-generator-container:focus-within {
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+}
+
+/* Add a subtle animation to the input field */
+@keyframes borderPulse {
+  0% {
+    border-color: var(--primary-color);
+  }
+  50% {
+    border-color: var(--secondary-color);
+  }
+  100% {
+    border-color: var(--primary-color);
+  }
+}
+
+.input:focus {
+  animation: borderPulse 2s infinite;
+}
+
+/* Enhance the contrast of the placeholder text in dark mode */
+@media (prefers-color-scheme: dark) {
+  .input::placeholder {
+    color: #bbb;
+    opacity: 0.7;
+  }
+}
+
+/* Add a subtle transition to the button text */
+.button span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.button:hover span {
+  transform: scale(1.05);
+}
+
+/* Improve the focus styles for touch devices */
+@media (hover: none) {
+  .input:focus,
+  .button:focus {
+    outline: 2px solid var(--primary-color);
+  }
+}
+
+/* Add a subtle animation to the ideas title */
+@keyframes underline {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.ideas-title::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.ideas-title:hover::after {
+  animation: underline 0.5s forwards;
+}
+
+/* Enhance the accessibility of the component for screen readers */
+.startup-idea-generator-container {
+  aria-label: "AI Startup Idea Generator";
+}
+
+.input {
+  aria-label: "Enter a keyword for startup ideas";
+}
+
+.button {
+  aria-live: "polite";
+}
+
+.ideas-container {
+  aria-live: "polite";
+}
+
+/* Improve the print styles for idea cards */
+@media print {
+  .idea-card {
+    break-inside: avoid;
+  }
+}
+
+/* Add a subtle transition to the whole component on load */
+.startup-idea-generator-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhance the focus styles for high contrast mode */
+@media (forced-colors: active) {
+  .input:focus,
+  .button:focus {
+    outline: 2px solid SelectedItem;
+  }
+}
+
+/* Add a subtle animation to the generate button on hover */
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.button:hover::after {
+  animation: ripple 1s ease-out;
+}
+
+/* Improve the contrast of the idea cards in dark mode */
+@media (prefers-color-scheme: dark) {
+  .idea-card {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Add a subtle transition to the idea card content */
+.idea-card-content {
+  transition: color 0.3s ease;
+}
+
+.idea-card:hover .idea-card-content {
+  color: var(--primary-color);
+}
+
+/* Enhance the accessibility of the component for keyboard navigation */
+.startup-idea-generator-container *:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* Improve the responsive design for very small screens */
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.8rem;
+  }
+
+  .idea-card-content {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add a subtle animation to the ideas container when new ideas are generated */
+@keyframes expandIn {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+.ideas-container {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  animation: expandIn 0.5s ease-out forwards;
+}
+
+/* Enhance the button styles for better visual feedback */
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+/* Improve the accessibility of the component for screen readers */
+.startup-idea-generator-container {
+  role: "main";
+}
+
+.ideas-container {
+  role: "region";
+  aria-label: "Generated startup ideas";
+}
+
+/* Add a subtle transition to the whole page when ideas are generated */
+body {
+  transition: background-color 0.5s ease;
+}
+
+body.ideas-generated {
+  background-color: color-mix(
+    in srgb,
+    var(--background-color) 95%,
+    var(--primary-color)
+  );
+}
+
+/* Enhance the focus styles for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .input:focus,
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5);
+  }
+}
